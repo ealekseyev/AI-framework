@@ -93,10 +93,10 @@ protected:
     }
 
     /// init the perceptrons
+    // more time efficient than three separate fors
     for(int i = 0; i < max(hiddencount, outputcount); i++) {
-      // more time efficient than three separate fors
       // don't init the thresholds; they are already 0
-      // also don't init the input values; we pass them
+      // also don't init the input values; we set them later
       //if(i < inputcount)
       //  input_neurons[i].setValue(sigmoid_random())
       if(i < hiddencount)

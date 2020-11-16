@@ -12,17 +12,17 @@ using std::endl;
 template<int inputcount, int hiddencount, int outputcount>
 class CustomStructured3LNeuralNetwork: public Structured3LNeuralNetwork<inputcount, hiddencount, outputcount> {
 public:
-  bool backpropogate() {// override {
+  bool backpropogate() override {
       cout << "running backpropogate" << endl;
       return true;
   }
-  bool feedforward() {// override {
+  bool feedforward() override {
     cout << "running feedforward" << endl;
     return true;
   }
 };
-// 784 inputs, one hidden layer of 100 nodes, and 26 outputs
-CustomStructured3LNeuralNetwork<7840, 10000, 2060> network;
+// 784 inputs, one hidden layer of 196 (784/4) nodes, and 26 outputs
+CustomStructured3LNeuralNetwork<784, 196, 26> network;
 
 int main(int argc, char** argv) {
   cout << "Size of neural network object: " << sizeof network << "" << endl;
